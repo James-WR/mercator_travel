@@ -18,3 +18,61 @@
   font-size: 16px;
   font-weight: 400;
 }
+
+#title-text {
+  width: 450px;
+}
+
+#search-bar {
+  width: 350px;
+  border-radius: 24px;
+  height: 50px;
+  background: rgba(6,81,67,0.3);
+  border: 1px solid black;
+}
+
+::placeholder {
+  font-size: 16px;
+  text-align: center;
+  color: black;
+}
+
+form button {
+  border-radius: 24px;
+  height: 50px;
+  background: rgba(46, 94, 170, 0.7);
+  border: 2px solid black;
+  font-weight: 500;
+  font-size: 16px;
+  color: #F9F7F6;
+}
+
+footer {
+  background:rgba(6,81,67,0.3);
+  height: 78px;
+}
+
+#main-info {
+  width: 800px
+}
+
+#circle-large {
+  background: rgba(46, 94, 170, 0.45);
+  height: 425px;
+  width: 425px;
+  border-radius: 50%;
+  position: absolute;
+  top: -120px;
+  left: -50px;
+  z-index: -1;
+}
+
+#circle-small {
+  height: 175px;
+  width: 159px;
+  background: rgba(6, 81, 67, 0.26);
+  border-radius: 50%;
+  position: absolute;
+  top: 180px;
+  left: -20px;
+}
