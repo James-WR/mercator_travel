@@ -1,3 +1,24 @@
-<% @trips.each do |trip| %>
-  <%= link_to trip.name, trip_path(trip.id) %>
-<% end %>
+<h1 id="my-trips-title">My Trips</h1>
+<div id="circle-large"></div>
+<div id="circle-small"></div>
+
+<div id="main">
+  <div id="map"></div>
+  <div id="lower">
+    <div id="recent-trips">
+      <h1>My Recent Trips</h1>
+      <li id="trips-list">
+        <% @trips.each do |trip| %>
+          <ul><%= link_to trip.name, trip_path(trip.id) %></ul>
+        <% end %>
+      </li>
+      <a href="#" id="see-all-button">See all</a>
+    </div>
+    <div id="buttons">
+      <a href="#" id="create-trip-button">New Trip</a>
+    </div>
+    <div id="quotes">
+      <p>Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
+    </div>
+  </div>
+</div>
