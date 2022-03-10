@@ -1,2 +1,25 @@
 <div id="circle-large"></div>
 <div id="circle-small"></div>
+<h1 id="show-title"><%=@trip.name%></h1>
+<div id="show-main">
+  <div id="photo-and-description">
+    <div id="cover-photo"></div>
+    <div id="trip-description">
+      <h1><%=@trip.name%></h1>
+      <p><%=@trip.description%></p>
+      <a href="">Edit</a>
+    </div>
+  </div>
+  <div id="photos-and-quote">
+    <div id="photos-container">
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+    </div>
+    <div id="quotes">
+      <p>Many who wander are lost<br><span style="font-style:italic">- Unknown</span></p>
+    </div>
+  </div>
+  <a href="" id="add-photo-button">Add Photo</a>
+  <a href="" id="delete-photo-button">Delete</a>
+</div>
