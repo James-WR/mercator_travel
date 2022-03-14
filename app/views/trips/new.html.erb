@@ -1,0 +1,7 @@
+  <%= form_for(@trip) do |f| %>
+    <%= f.label :Trip_name %>
+    <%= f.text_field :name %>
+    <%= f.label :where_did_you_go? %>
+    <%= f.text_field :destination_exact %>
+    <%= f.submit %>
+  <% end %>
