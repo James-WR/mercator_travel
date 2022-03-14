@@ -5,8 +5,8 @@
   <div id="photo-and-description">
     <div id="cover-photo"></div>
     <div id="trip-description">
-      <h1><%=@trip.name%></h1>
-      <p><%=@trip.description%></p>
+      <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
+      <p><%= @trip.description%></p>
       <a href="">Edit</a>
     </div>
   </div>
