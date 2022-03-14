@@ -15,8 +15,39 @@
       <a href="#" id="see-all-button">See all</a>
     </div>
     <div id="buttons">
-      <a href="#" id="create-trip-button">New Trip</a>
+      <a href="#" id="create-trip-button" data-toggle="modal" data-target="#modalNew">New Trip</a>
     </div>
+
+    <div id="modalNew" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Trip</h4>
+            </div>
+            <div class="modal-body">
+              <h2>Create a Trip</h2>
+              <%= simple_form_for(@trip) do |f| %>
+                <%= f.label :Trip_name %>
+                <%= f.text_field :name %>
+                <%= f.label :where_did_you_go? %>
+                <%= f.text_field :destination_exact %>
+                <%= f.submit %>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
     <div id="quotes">
       <p>Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
     </div>
