@@ -4,8 +4,8 @@ class CreateTrips < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :destination_exact
       t.string :destination_country
-      t.integer :date_start
-      t.integer :date_end
+      t.date :date_start
+      t.date :date_end
       t.string :description
       t.string :trip_map
       t.references :user, null: false, foreign_key: true

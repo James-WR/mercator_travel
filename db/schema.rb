@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2022_03_13_213140) do
     t.string "name"
     t.string "destination_exact"
     t.string "destination_country"
-    t.integer "date_start"
-    t.integer "date_end"
+    t.date "date_start"
+    t.date "date_end"
     t.string "description"
     t.string "trip_map"
     t.bigint "user_id", null: false
