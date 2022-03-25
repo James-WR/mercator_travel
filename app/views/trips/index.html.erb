@@ -27,19 +27,12 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for(@trip) do |f| %>
-            <%= f.label :Trip_title %>
-            <%= f.input :name, :placeholder => 'London City Break 2022' %>
-            <hr>
-            <%= f.label :Where_did_you_go? %>
-            <%= f.input :destination_exact, input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
+            <%= f.input :name, label: "Trip Title", :placeholder => 'London City Break 2022' %>
+            <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
               data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
-            <hr>
-            <div style="font-weight:bold"><%= f.input :description, :placeholder => 'Had a great time. Would love to come back.' %></div>
-            <%= f.submit %>
+            <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
+            <%= f.submit id: 'submit-button' %>
           <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
