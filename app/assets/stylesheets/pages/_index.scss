@@ -87,14 +87,29 @@
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 18px;
+  box-shadow: 1px 1px 6px #888888;
+}
+
+#create-trip-button:hover {
+  text-decoration: none;
+  transform: scale(1.05);
+  color: #ffffff;
 }
 
 #submit-button {
   background-color: #12D125;
   color: #F9F7F6;
-  padding: 1% 1%;
+  padding: 2% 2%;
   border-radius: 8px;
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 16px;
+  box-shadow: 1px 1px 6px #888888;
+  border: none;
+}
+
+#submit-button:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+  color: #ffffff;
 }
