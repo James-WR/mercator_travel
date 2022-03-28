@@ -8,7 +8,12 @@
       <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
       <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
       <p><%= @trip.description%></p>
-      <a href="" data-toggle="modal" data-target="#modalNew">Edit</a>
+      <div style="position:absolute; right:52px; bottom:0">
+        <a href="" data-toggle="modal" data-target="#modalNew" >Edit</a>
+      </div>
+      <div style="position:absolute; right:0; bottom:0">
+        <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip?" } %>
+      </div>
       <div id="modalNew" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
