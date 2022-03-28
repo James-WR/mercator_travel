@@ -19,6 +19,7 @@
             <%= f.input :date_start, as: :date, label: "When did you begin your trip?" %>
             <%= f.input :date_end, as: :date, label: "When did you leave?" %>
             <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
+            <%= f.input :photo, as: :file, label: "Choose a cover photo for your trip:" %>
             <%= f.submit id: 'submit-button' %>
           <% end %>
         </div>
