@@ -8,7 +8,28 @@
       <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
       <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
       <p><%= @trip.description%></p>
-      <a href="">Edit</a>
+      <a href="" data-toggle="modal" data-target="#modalNew">Edit</a>
+      <div id="modalNew" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Edit My Trip</h2>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@trip) do |f| %>
+                <%= f.input :name, label: "Trip Title", :placeholder => 'London City Break 2022' %>
+                <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
+                  data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
+                <%= f.input :date_start, as: :date, label: "When did you begin your trip?" %>
+                <%= f.input :date_end, as: :date, label: "When did you leave?" %>
+                <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
+                <%= f.submit id: 'submit-button' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div id="photos-and-quote">
