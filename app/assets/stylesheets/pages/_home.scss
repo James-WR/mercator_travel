@@ -58,12 +58,15 @@
 }
 
 footer {
-  background:rgba(6,81,67,0.3);
+  background:rgba(6,81,67,0.2);
   height: 64px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #main-info {
@@ -121,6 +124,34 @@ footer {
   position: absolute;
   height: 55px;
   width: 55x;
-  bottom: 110px;
+  bottom: 130px;
   left: 775px;
+}
+
+#github-icon {
+  font-size: 24px;
+  color: black;
+  margin-right: 8px;
+  opacity: 0.3;
+}
+
+#linkedin-icon {
+  font-size: 24px;
+  color: black;
+  opacity: 0.3;
+}
+
+#linkedin-icon:hover {
+  opacity: 1;
+}
+
+#github-icon:hover {
+  opacity: 1;
+}
+
+#copyright-text {
+  margin-top: 6px;
+  margin-right: 8px;
+  margin-bottom: 0;
+  opacity: 0.5;
 }
