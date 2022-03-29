@@ -51,6 +51,21 @@
       <p>Many who wander are lost<br><span style="font-style:italic">- Unknown</span></p>
     </div>
   </div>
-  <a href="" id="add-photo-button">Add Photo</a>
-  <a href="" id="delete-photo-button">Delete</a>
+  <a href="" id="add-photo-button" data-toggle="modal" data-target="#modalAdd">Add Photos</a>
+  <div id="modalAdd" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add Photos</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(@trip) do |f| %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some more photos to your trip:" %>
+            <%= f.submit id: 'submit-button' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>
+<%# <a href="" id="delete-photo-button">Delete</a> %>

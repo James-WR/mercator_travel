@@ -94,9 +94,17 @@
 #add-photo-button {
   color: white;
   background: #12D125;
-  border: 1px black solid;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  box-shadow: 1px 1px 6px #888888;
   padding: 8px;
   border-radius: 12px;
+}
+
+#add-photo-button:hover {
+  text-decoration: none;
+  background: #0ead1e;
 }
 
 #delete-photo-button {
