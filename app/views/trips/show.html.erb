@@ -3,7 +3,7 @@
 <h1 id="show-title"><span id="back-button"><a href="/trips">Back</a></span><%=@trip.name%></h1>
 <div id="show-main">
   <div id="photo-and-description">
-    <div id="cover-photo" style="background-image: url('<%= cl_image_path @trip.photo.key %>')"></div>
+    <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')"></div>
     <div id="trip-description">
       <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
       <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
@@ -29,7 +29,7 @@
                 <%= f.input :date_start, as: :date, label: "When did you begin your trip?" %>
                 <%= f.input :date_end, as: :date, label: "When did you leave?" %>
                 <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
-                <%= f.input :photo, as: :file, label: "Change your trip's cover photo" %>
+                <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos to your trip:" %>
                 <%= f.submit id: 'submit-button' %>
               <% end %>
             </div>
@@ -40,9 +40,12 @@
   </div>
   <div id="photos-and-quote">
     <div id="photos-container">
+      <% @trip.photos.each do |photo| %>
+        <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')"></div>
+      <% end %>
+      <%# <div class="photo"></div>
       <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
+      <div class="photo"></div> %>
     </div>
     <div id="quotes">
       <p>Many who wander are lost<br><span style="font-style:italic">- Unknown</span></p>

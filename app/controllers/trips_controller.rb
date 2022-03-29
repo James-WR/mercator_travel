@@ -14,6 +14,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @cover_photo = @trip.photos.first.key
   end
 
   def create
@@ -45,6 +46,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :destination_exact, :description, :date_start, :date_end, :photo)
+    params.require(:trip).permit(:name, :destination_exact, :description, :date_start, :date_end, photos: [])
   end
 end
