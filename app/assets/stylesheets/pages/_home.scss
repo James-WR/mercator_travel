@@ -82,6 +82,7 @@ footer {
   top: -120px;
   left: -50px;
   z-index: -1;
+  box-shadow: 1.5px 1.5px 4px #888888;
 }
 
 #circle-small {
@@ -98,4 +99,28 @@ footer {
   position: absolute;
   top: 228px;
   right: 0px;
+}
+
+#map-image {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  top: 120px;
+  right: 200px;
+}
+
+#globe-image {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top: 70px;
+  left: 500px;
+}
+
+#camera-shot-image {
+  position: absolute;
+  height: 55px;
+  width: 55x;
+  bottom: 110px;
+  left: 775px;
 }
