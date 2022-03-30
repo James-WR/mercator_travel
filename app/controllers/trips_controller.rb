@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [ :create ]
   def index
-    @trips = Trip.all
+    @trips = Trip.where(user_id: current_user.id)
     @markers = @trips.geocoded.map do |trip|
       {
         lat: trip.latitude,
