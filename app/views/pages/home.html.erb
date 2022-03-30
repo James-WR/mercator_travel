@@ -3,7 +3,13 @@
   <div id="title-text">
     <p id="title-description">Mercator is a customisable online photo journal that makes a personalised map of the places you’ve visited.</p>
   </div>
-  <button id="make-map-button" data-toggle="modal" data-target="#modalNew">Make a map</button>
+
+  <% if user_signed_in? && !Trip.all.empty? %>
+    <button id="my-trips-button" onclick="document.location='/trips'">My Trips</button>
+  <% else %>
+    <button id="make-map-button" data-toggle="modal" data-target="#modalNew">Make a map</button>
+  <% end %>
+
   <div id="modalNew" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">

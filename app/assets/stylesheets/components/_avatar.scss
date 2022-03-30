@@ -1,6 +1,12 @@
 .avatar {
-  width: 40px;
+  width: 35px;
   border-radius: 50%;
+  height: 35px;
+}
+
+.avatar:hover {
+  cursor: pointer;
+  border: cadetblue 2px solid;
 }
 .avatar-large {
   width: 56px;

@@ -57,6 +57,24 @@
   transform: scale(1.05);
 }
 
+#my-trips-button {
+  border-radius: 32px;
+  height: 72px;
+  background-color: rgba(46, 94, 170, 0.7);
+  box-shadow: 1.5px 1.5px 6px #888888;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  color: #F9F7F6;
+  margin-top: 8px;
+  padding: 16px 33px;
+}
+
+#my-trips-button:hover {
+  transform: scale(1.05);
+}
+
+
 footer {
   background:rgba(6,81,67,0.2);
   height: 64px;
