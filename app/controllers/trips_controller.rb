@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :create ]
+  skip_before_action :authenticate_user!, only: [ :create ]
   def index
     @trips = Trip.where(user_id: current_user.id)
     @markers = @trips.geocoded.map do |trip|
@@ -16,6 +16,8 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @cover_photo = @trip.photos.first.key
+    @trip.user_id = current_user.id
+    @trip.save!
   end
 
   # def new
@@ -24,7 +26,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.user = current_user
+    @trip.user_id = 1
     if @trip.save!
       redirect_to trip_path(@trip)
     else
