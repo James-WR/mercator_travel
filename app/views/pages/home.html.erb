@@ -6,7 +6,7 @@
 
   <% if user_signed_in? && !Trip.all.empty? %>
     <button id="my-trips-button" onclick="document.location='/trips'">My Trips</button>
-  <% else %>
+    <% else %>
     <button id="make-map-button" data-toggle="modal" data-target="#modalNew">Make a map</button>
   <% end %>
 
