@@ -22,8 +22,12 @@
             <%= f.input :name, label: "Trip Title", :placeholder => 'e.g. London City Break 2022' %>
             <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
               data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
-            <%= f.input :date_start, as: :string, label: "When did you begin your trip?", input_html: { id: "start_date"} %>
-            <%= f.input :date_end, as: :string, label: "When did you leave?", input_html: { id: "end_date"} %>
+            <div style="width: 51%">
+              <%= f.input :date_start, as: :string, label: "When did you begin your trip?", input_html: { id: "start_date"} %>
+            </div>
+            <div style="width: 51%">
+              <%= f.input :date_end, as: :string, label: "When did you leave?", input_html: { id: "end_date"} %>
+            </div>
             <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
             <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Choose some photos for your trip:" %>
             <%= f.submit id: 'submit-button' %>
