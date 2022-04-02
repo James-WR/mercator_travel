@@ -12,5 +12,14 @@ function makeBoxBig(e) {
   map.style.zIndex = "0";
   buttons.classList.toggle("d-none");
   quotes.classList.toggle("d-none");
+  seeAllBox.style.transition = "all 0.3s";
+  changeButtonText();
+}
 
+function changeButtonText() {
+  if (seeAllButton.innerHTML === "See all") {
+    seeAllButton.innerHTML = "See Summary";
+  } else {
+    seeAllButton.innerHTML = "See all"
+  };
 }
