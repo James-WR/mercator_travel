@@ -12,14 +12,23 @@ function makeBoxBig(e) {
   map.style.zIndex = "0";
   buttons.classList.toggle("d-none");
   quotes.classList.toggle("d-none");
-  seeAllBox.style.transition = "all 0.3s";
+  const title = seeAllBox.firstElementChild;
+  changeTitleText(title);
   changeButtonText();
 }
 
 function changeButtonText() {
   if (seeAllButton.innerHTML === "See all") {
-    seeAllButton.innerHTML = "See Summary";
+    seeAllButton.innerHTML = "Back to summary";
   } else {
     seeAllButton.innerHTML = "See all"
   };
-}
+};
+
+function changeTitleText(title) {
+  if (title.innerHTML === "My Recently Added Trips") {
+    title.innerHTML = "My Trips";
+  } else {
+    title.innerHTML = "My Recently Added Trips"
+  };
+};
