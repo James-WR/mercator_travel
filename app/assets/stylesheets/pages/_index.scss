@@ -39,6 +39,9 @@
   width: 45%;
   height: 100%;
   margin-right: 8px;
+  overflow: hidden;
+  // display: flex;
+  // flex-direction: row;
   h1 {
     font-family: 'Prompt', sans-serif;
     text-align: center;
@@ -76,7 +79,7 @@
   position: absolute;
   bottom: 5%;
   right: 2%;
-  border: black 1px solid;
+  box-shadow: 1px 1px 5px #888888;
 }
 
 #create-trip-button {
@@ -112,4 +115,12 @@
   text-decoration: none;
   transform: scale(1.1);
   color: #ffffff;
+}
+
+.make-box-big {
+  transform: translate(0px, -100px);
+  background-color: rgba(227, 228, 227, 1) !important;
+  width: 100% !important;
+  height: 250px !important;
+  margin-right: 0 !important;
 }

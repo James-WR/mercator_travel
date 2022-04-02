@@ -19,3 +19,4 @@ require("channels")
 import "controllers"
 import "bootstrap"
 import "plugins/flatpickr"
+import "components/see_all.js"

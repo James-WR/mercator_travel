@@ -8,11 +8,11 @@
     <div id="recent-trips">
       <h1 style="margin-bottom: 12px">My Recently Added Trips</h1>
       <li id="trips-list">
-        <% @trips_reversed.first(2).each do |trip| %>
-          <ul style="margin-bottom: auto">
-            <%= link_to trip.name, trip_path(trip.id) %>
-            <span id="trip-dates" style="margin-left: 16px"><%= trip.date_start %> - <%= trip.date_end %></span>
-          </ul>
+        <% @trips_reversed.each do |trip| %>
+            <ul style="margin-bottom: 10px">
+              <%= link_to trip.name, trip_path(trip.id) %>
+              <span id="trip-dates" style="margin-left: 16px"><%= trip.date_start %> - <%= trip.date_end %></span>
+            </ul>
         <% end %>
       </li>
       <a href="#" id="see-all-button">See all</a>
