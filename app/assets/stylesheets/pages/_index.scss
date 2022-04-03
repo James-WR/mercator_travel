@@ -117,9 +117,25 @@
 
 .make-box-big {
   transform: translate(0px, -100px);
-  background-color: rgba(227, 228, 227, 1) !important;
+  background-color: rgba(227, 228, 227, 0.9) !important;
   width: 120% !important;
   height: 250px !important;
   margin-right: 0 !important;
-  transition: all 0.3s;
+}
+
+.two-column-trips {
+  column-count: 2;
+}
+
+.see-all-enlarged {
+  color: #0e0000 !important;
+  padding: 8px !important;
+  border-radius: 12px !important;
+  position: absolute !important;
+  position: sticky !important;
+  bottom: 83% !important;
+  background: none !important;
+  box-shadow: none !important;
+  left: 86%;
+
 }
