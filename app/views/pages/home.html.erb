@@ -6,6 +6,8 @@
 
   <% if user_signed_in? && !Trip.where(user_id: current_user.id).empty? %>
     <button id="my-trips-button" onclick="document.location='/trips'">My Trips</button>
+    <%# <span id="back-button"><a href="/trips">Back</a></span> %>
+    <%# <%= link_to "My Trips", "/trips", class: "nav-link" %>
   <% elsif !user_signed_in? %>
     <button id="make-map-button" onclick="window.location.href='/users/sign_in'">Make a map</button>
   <% else %>

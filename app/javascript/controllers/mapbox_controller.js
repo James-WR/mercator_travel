@@ -19,10 +19,10 @@ export default class extends Controller {
     this.#fitMapToMarkers()
   }
 
+
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-
       const customMarker = document.createElement("div")
       customMarker.className = "marker"
       customMarker.style.backgroundImage = `url('${marker.image_url}')`
@@ -35,7 +35,6 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.map)
     });
-
     this.map.addControl(new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
@@ -45,6 +44,6 @@ export default class extends Controller {
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1500 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 750 });
   }
 }

@@ -74,9 +74,9 @@
   color: #F9F7F6;
   padding: 8px;
   border-radius: 12px;
-  position: absolute;
+  position: sticky;
   bottom: 5%;
-  right: 2%;
+  left: 85%;
   box-shadow: 1px 1px 5px #888888;
 }
 
@@ -117,7 +117,7 @@
 
 .make-box-big {
   transform: translate(0px, -100px);
-  background-color: rgba(227, 228, 227, 0.9) !important;
+  background-color: rgba(227, 228, 227, 0.95) !important;
   width: 120% !important;
   height: 250px !important;
   margin-right: 0 !important;
