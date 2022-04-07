@@ -38,7 +38,7 @@
   background-color: rgba(6, 81, 67, 0.1);
   width: 45%;
   height: 100%;
-  margin-right: 8px;
+  margin-right: 3px;
   overflow: hidden;
   h1 {
     font-family: 'Prompt', sans-serif;
@@ -94,7 +94,7 @@
 #create-trip-button:hover {
   text-decoration: none;
   transform: scale(1.05);
-  color: #ffffff;
+  color: #dfdddd;
 }
 
 #submit-button {

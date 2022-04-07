@@ -30,6 +30,15 @@ export default class extends Controller {
       customMarker.style.width = "40px"
       customMarker.style.height = "40px"
 
+      customMarker.addEventListener("mouseover", (e) => {
+        e.target.style.width = "50px"
+        e.target.style.height = "50px"
+      });
+      customMarker.addEventListener("mouseout", (e) => {
+        e.target.style.width = "40px"
+        e.target.style.height = "40px"
+      });
+
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
