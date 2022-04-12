@@ -19,5 +19,6 @@ require("channels")
 import "controllers"
 import "bootstrap"
 import "plugins/flatpickr"
-import "components/see_all.js"
-import "components/map_refresh.js"
+import "components/see_all"
+import "components/map_refresh"
+import "components/photo_viewing"

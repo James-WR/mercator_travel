@@ -1,77 +1,78 @@
-<div id="circle-large"></div>
-<div id="circle-small"></div>
-<h1 id="show-title"><span id="back-button"><a href="/trips">Back</a></span><%=@trip.name%></h1>
-<div id="show-main">
-  <div id="photo-and-description">
-    <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')"></div>
-    <div id="trip-description">
-      <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
-      <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
-      <p><%= @trip.description%></p>
-      <div style="position:absolute; right:0; bottom:0">
-        <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip?" } %>
-      </div>
-      <div style="position:absolute; right:52px; bottom:0">
-        <a href="" data-toggle="modal" data-target="#modalNew" >Edit</a>
-      </div>
-      <div id="modalNew" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2>Edit My Trip</h2>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <%= simple_form_for(@trip) do |f| %>
-                <%= f.input :name, label: "Trip Title", :placeholder => 'London City Break 2022' %>
-                <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
-                  data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
-                <div style="width: 51%">
-                  <%= f.input :date_start, as: :string, label: "When did you begin your trip?", input_html: { id: "start_date"} %>
-                </div>
-                <div style="width: 51%">
-                  <%= f.input :date_end, as: :string, label: "When did you leave?", input_html: { id: "end_date"} %>
-                </div>
-                <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
-                <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos to your trip:" %>
-                <%= f.submit id: 'submit-button' %>
-              <% end %>
+<body class="show-page">
+  <div id="circle-large"></div>
+  <div id="circle-small"></div>
+  <h1 id="show-title"><span id="back-button"><a onclick="document.location='/trips/'">Back</a></span><%=@trip.name%></h1>
+  <div id="show-main">
+    <div id="photo-and-description">
+      <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')"></div>
+      <div id="trip-description">
+        <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
+        <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
+        <p><%= @trip.description%></p>
+        <div style="position:absolute; right:0; bottom:0">
+          <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip?" } %>
+        </div>
+        <div style="position:absolute; right:52px; bottom:0">
+          <a href="" data-toggle="modal" data-target="#modalNew" >Edit</a>
+        </div>
+        <div id="modalNew" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>Edit My Trip</h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for(@trip) do |f| %>
+                  <%= f.input :name, label: "Trip Title", :placeholder => 'London City Break 2022' %>
+                  <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
+                    data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
+                  <div style="width: 51%">
+                    <%= f.input :date_start, as: :string, label: "When did you begin your trip?", input_html: { id: "start_date"} %>
+                  </div>
+                  <div style="width: 51%">
+                    <%= f.input :date_end, as: :string, label: "When did you leave?", input_html: { id: "end_date"} %>
+                  </div>
+                  <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
+                  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some photos to your trip:" %>
+                  <%= f.submit id: 'submit-button' %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="photos-and-quote">
-    <div id="photos-container">
-      <% @trip.photos.each do |photo| %>
-        <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')"></div>
-      <% end %>
+    <div id="photos-and-quote">
+      <div id="photos-container">
+        <% @trip.photos.each do |photo| %>
+          <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')"></div>
+        <% end %>
+      </div>
+      <div id="quotes" style="right: 10%; width:25%; top:66%;">
+        <i class="fas fa-quote-left"></i>
+        <br>
+        <p style="margin-top:16px; margin-bottom:0rem;">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
+        <br>
+        <p style="position:absolute; right: 30%; top:48%"><i class="fas fa-quote-right"></i></p>
+      </div>
     </div>
-    <div id="quotes" style="right: 10%; width:25%; top:66%;">
-      <i class="fas fa-quote-left"></i>
-      <br>
-      <p style="margin-top:16px; margin-bottom:0rem;">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
-      <br>
-      <p style="position:absolute; right: 30%; top:48%"><i class="fas fa-quote-right"></i></p>
-    </div>
-  </div>
-  <a href="" id="add-photo-button" data-toggle="modal" data-target="#modalAdd">Add Photos</a>
-  <div id="modalAdd" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Add Photos</h2>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for(@trip) do |f| %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some more photos to your trip:" %>
-            <%= f.submit id: 'submit-button' %>
-          <% end %>
+    <a href="" id="add-photo-button" data-toggle="modal" data-target="#modalAdd">Add Photos</a>
+    <div id="modalAdd" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Add Photos</h2>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(@trip) do |f| %>
+              <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add some more photos to your trip:" %>
+              <%= f.submit id: 'submit-button' %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<%# <a href="" id="delete-photo-button">Delete</a> %>
+</body>

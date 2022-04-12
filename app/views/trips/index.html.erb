@@ -1,58 +1,61 @@
-<h1 id="my-trips-title">My Trips</h1>
-<div id="circle-large"></div>
-<div id="circle-small"></div>
+<body class="index-page">
+  <h1 id="my-trips-title">My Trips</h1>
+  <div id="circle-large"></div>
+  <div id="circle-small"></div>
 
-<div id="main">
-  <div id="map" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div id="lower">
-    <div id="recent-trips">
-      <h1 style="margin-bottom: 12px; position: sticky; top: 12px">My Recently Added Trips</h1>
-      <li id="trips-list">
-        <% @trips_reversed.each do |trip| %>
-          <ul style="margin-bottom: 10px">
-            <%= link_to trip.name, trip_path(trip.id) %>
-            <span id="trip-dates" style="margin-left: 16px"><%= trip.date_start %> - <%= trip.date_end %></span>
-          </ul>
-        <% end %>
-      </li>
-      <a href="#" id="see-all-button">See all</a>
-    </div>
-    <div id="buttons">
-      <a href="#" id="create-trip-button" data-toggle="modal" data-target="#modalNew" style="margin-top: 0; border-radius: 12px; box-shadow: 1px 1px 4px #888888; background-color: rgba(18,209,37,0.9)">
-      New Trip</a>
-    </div>
-    <div id="modalNew" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2>Create a Trip</h2>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for(@trip) do |f| %>
-              <%= f.input :name, label: "Trip Title", :placeholder => 'London City Break 2022' %>
-              <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
-                data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
-              <div style="width: 51%">
-                <%= f.input :date_start, as: :string, label: "When did you begin your trip?", input_html: { id: "start_date"} %>
-              </div>
-              <div style="width: 51%">
-                <%= f.input :date_end, as: :string, label: "When did you leave?", input_html: { id: "end_date"} %>
-              </div>
-              <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
-              <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Choose some photos for your trip:" %>
-              <%= f.submit id: 'submit-button' %>
-            <% end %>
+  <div id="main">
+    <div id="map" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div id="lower">
+      <div id="recent-trips">
+        <h1 style="margin-bottom: 12px; position: sticky; top: 12px">My Recently Added Trips</h1>
+        <li id="trips-list">
+          <% @trips_reversed.each do |trip| %>
+            <ul style="margin-bottom: 10px">
+              <%# <%= link_to trip.name, trip_path(trip.id) %>
+              <li onclick="document.location='/trips/<%=trip.id%>'"><%= trip.name %> </li>
+              <span id="trip-dates" style="margin-left: 16px"><%= trip.date_start %> - <%= trip.date_end %></span>
+            </ul>
+          <% end %>
+        </li>
+        <a href="#" id="see-all-button">See all</a>
+      </div>
+      <div id="buttons">
+        <a href="#" id="create-trip-button" data-toggle="modal" data-target="#modalNew" style="margin-top: 0; border-radius: 12px; box-shadow: 1px 1px 4px #888888; background-color: rgba(18,209,37,0.9)">
+        New Trip</a>
+      </div>
+      <div id="modalNew" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Create a Trip</h2>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(@trip) do |f| %>
+                <%= f.input :name, label: "Trip Title", :placeholder => 'London City Break 2022' %>
+                <%= f.input :destination_exact, label: "Where did you go?", input_html: { data: { geocoder_target: 'address' }, class: 'd-none'}, wrapper_html: {
+                  data: { controller: 'geocoder', geocoder_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
+                <div style="width: 51%">
+                  <%= f.input :date_start, as: :string, label: "When did you begin your trip?", input_html: { id: "start_date"} %>
+                </div>
+                <div style="width: 51%">
+                  <%= f.input :date_end, as: :string, label: "When did you leave?", input_html: { id: "end_date"} %>
+                </div>
+                <%= f.input :description, as: :text, label: "Describe your trip:", :placeholder => 'Had a great time. Loved the National Gallery.' %>
+                <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Choose some photos for your trip:" %>
+                <%= f.submit id: 'submit-button' %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="quotes" style="right:20%; top: 80%">
-      <i class="fas fa-quote-left"></i>
-      <br>
-      <p style="margin-top:16px; margin-bottom:0rem; right:20%; top:80%">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
-      <br>
-      <p style="position:absolute; right: 18%; top: 50%"><i class="fas fa-quote-right"></i></p>
+      <div id="quotes" style="right:20%; top: 80%">
+        <i class="fas fa-quote-left"></i>
+        <br>
+        <p style="margin-top:16px; margin-bottom:0rem; right:20%; top:80%">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
+        <br>
+        <p style="position:absolute; right: 18%; top: 50%"><i class="fas fa-quote-right"></i></p>
+      </div>
     </div>
   </div>
-</div>
+</body>

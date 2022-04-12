@@ -4,7 +4,9 @@ const buttons = document.getElementById("buttons");
 const quotes = document.getElementById("quotes");
 const tripsList = document.getElementById("trips-list");
 
-seeAllButton.addEventListener("click", makeBoxBig)
+if ($('body').is('.index-page')) {
+  seeAllButton.addEventListener("click", makeBoxBig)
+}
 
 function makeBoxBig(e) {
   e.preventDefault();

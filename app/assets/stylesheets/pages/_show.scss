@@ -20,7 +20,6 @@
 }
 
 #cover-photo {
-  // background-image: url("beers.jpeg");
   background-size: cover;
   background-position: center;
   width: 55%;
@@ -90,6 +89,11 @@
   background-position: center;
 }
 
+.photo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
     width: 0px;
     height: 1px;
@@ -125,13 +129,13 @@
   background: #0ead1e;
 }
 
-#delete-photo-button {
-  color: white;
-  background: #E78070;
-  border: 1px black solid;
-  padding: 8px;
-  border-radius: 12px;
-}
+// #delete-photo-button {
+//   color: white;
+//   background: #E78070;
+//   border: 1px black solid;
+//   padding: 8px;
+//   border-radius: 12px;
+// }
 
 #back-button {
   font-size: 14px;
