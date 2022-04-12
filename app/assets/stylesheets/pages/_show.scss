@@ -71,24 +71,42 @@
 #photos-container {
   border-radius: 16px;
   box-shadow: 1px 1px 6px #888888;
-  display: flex;
+  display: -webkit-inline-box;
+  overflow: scroll;
   height: 85%;
-  width: 80%;
+  width: 65%;
   background: rgba(46, 94, 170, 0.05);
-  align-items: center;
-  justify-content: center;
 }
 
 .photo {
   border-radius: 12px;
   box-shadow: 1px 1px 4px #888888;
   height: 85%;
-  width: 33%;
+  width: 31%;
   background-color: white;
-  margin: 8px;
+  margin: 12px 8px;
   background-image: url("colourful_map.jpeg");
   background-size: cover;
   background-position: center;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 12px;
+    margin: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(37, 37, 37);
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(2, 2, 2);
 }
 
 #add-photo-button {
