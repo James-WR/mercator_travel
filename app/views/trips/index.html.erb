@@ -12,8 +12,9 @@
           <% @trips_reversed.each do |trip| %>
             <ul style="margin-bottom: 10px">
               <%# <%= link_to trip.name, trip_path(trip.id) %>
-              <li onclick="document.location='/trips/<%=trip.id%>'"><%= trip.name %> </li>
-              <span id="trip-dates" style="margin-left: 16px"><%= trip.date_start %> - <%= trip.date_end %></span>
+              <li onclick="document.location='/trips/<%=trip.id%>'"><%= trip.name %>
+                <span id="trip-dates" style="margin-left: 16px"><%= trip.date_start %> - <%= trip.date_end %></span>
+              </li>
             </ul>
           <% end %>
         </li>
@@ -54,7 +55,7 @@
         <br>
         <p style="margin-top:16px; margin-bottom:0rem; right:20%; top:80%">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
         <br>
-        <p style="position:absolute; right: 18%; top: 50%"><i class="fas fa-quote-right"></i></p>
+        <p style="position:absolute; right: 27%; top: 49%"><i class="fas fa-quote-right"></i></p>
       </div>
     </div>
   </div>

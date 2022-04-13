@@ -4,7 +4,9 @@
   <h1 id="show-title"><span id="back-button"><a onclick="document.location='/trips/'">Back</a></span><%=@trip.name%></h1>
   <div id="show-main">
     <div id="photo-and-description">
-      <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')"></div>
+      <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')">
+        <img src="/assets/cross.png" alt="" id="delete-photo-button">
+      </div>
       <div id="trip-description">
         <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
         <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
@@ -54,7 +56,7 @@
         <br>
         <p style="margin-top:16px; margin-bottom:0rem;">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
         <br>
-        <p style="position:absolute; right: 30%; top:48%"><i class="fas fa-quote-right"></i></p>
+        <p style="position:absolute; right: 34%; top:48%"><i class="fas fa-quote-right"></i></p>
       </div>
     </div>
     <a href="" id="add-photo-button" data-toggle="modal" data-target="#modalAdd">Add Photos</a>

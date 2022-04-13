@@ -65,6 +65,13 @@
 
 #trips-list {
   list-style-type: none;
+  ul {
+    list-style-type: none;
+  }
+  ul:hover {
+    color: rgba(46, 94, 170, 0.7);
+    cursor: pointer;
+  }
 }
 
 #see-all-button {
