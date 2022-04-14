@@ -19,10 +19,6 @@ class TripsController < ApplicationController
     @cover_photo = @trip.photos.first.key
   end
 
-  # def new
-  #   @trip = Trip.new
-  # end
-
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
@@ -44,6 +40,12 @@ class TripsController < ApplicationController
   def destroy
     @trip.destroy
     redirect_to trips_path
+  end
+
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_to request.referrer
   end
 
   private

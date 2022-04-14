@@ -9,7 +9,7 @@
       </div>
       <div id="trip-description">
         <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
-        <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></h6>
+        <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></p>
         <p><%= @trip.description%></p>
         <div style="position:absolute; right:0; bottom:0">
           <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure you want to delete this trip?" } %>
@@ -49,6 +49,7 @@
       <div id="photos-container">
         <% @trip.photos.each do |photo| %>
           <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')"></div>
+          <p id="delete-v1"><%= link_to 'Remove', delete_image_attachment_trip_path(photo.id), method: :delete %></p>
         <% end %>
       </div>
       <div id="quotes" style="right: 10%; width:25%; top:66%;">
