@@ -1,12 +1,15 @@
 <body class="show-page">
   <div id="circle-large"></div>
   <div id="circle-small"></div>
-  <h1 id="show-title"><span id="back-button"><a onclick="document.location='/trips/'">Back</a></span><%=@trip.name%></h1>
+  <h1 id="show-title">
+    <span id="back-button">
+      <a onclick="document.location='/trips/'">Back</a>
+    </span><%=@trip.name%>
+  </h1>
+
   <div id="show-main">
     <div id="photo-and-description">
-      <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')">
-        <%# <img src="/assets/cross.png" alt="" id="delete-photo-button"> %>
-      </div>
+      <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')"></div>
       <div id="trip-description">
         <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
         <p id="trip-dates"><%= @trip.date_start %> - <%= @trip.date_end %></p>
@@ -49,14 +52,19 @@
       <div id="photos-container">
         <% @trip.photos.each do |photo| %>
           <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')">
-            <div class="delete-v1"><%= link_to (image_tag("/assets/cross.png", id: "delete-cross")), delete_image_attachment_trip_path(photo.id), method: :delete %></div>
+            <div class="delete-v1"><%= link_to (image_tag("/assets/cross.png", id: "delete-cross")),
+            delete_image_attachment_trip_path(photo.id), method: :delete %>
+            </div>
           </div>
         <% end %>
       </div>
       <div id="quotes" style="right: 10%; width:25%; top:66%;">
         <i class="fas fa-quote-left"></i>
         <br>
-        <p style="margin-top:16px; margin-bottom:0rem;">Many who wander are lost<br><span style="font-style:italic">- Unknown</span> </p>
+        <p style="margin-top:16px; margin-bottom:0rem;">Many who wander are lost
+          <br>
+          <span style="font-style:italic">- Unknown</span>
+        </p>
         <br>
         <p style="position:absolute; right: 34%; top:48%"><i class="fas fa-quote-right"></i></p>
       </div>

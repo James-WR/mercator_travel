@@ -1,3 +1,5 @@
+// flatpickr.js provides a nicer UX for picking dates on a form.
+
 import flatpickr from "flatpickr"
 import "flatpickr/dist/flatpickr.min.css"
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"

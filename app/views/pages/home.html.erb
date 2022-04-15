@@ -1,7 +1,10 @@
 <div id="main-info">
-  <h1 id="main-title">Create your own travel map of <span id="the-world">the world <img src="assets/pointer.png" alt=""></span></h1>
+  <h1 id="main-title">Create your own travel map of
+    <span id="the-world">the world <img src="assets/pointer.png" alt=""></span>
+  </h1>
   <div id="title-text">
-    <p id="title-description">Mercator is a customisable online photo journal that makes a personalised map of the places you’ve visited.</p>
+    <p id="title-description">Mercator is a customisable online photo journal that
+    makes a personalised map of the places you’ve visited.</p>
   </div>
 
   <% if user_signed_in? && !Trip.where(user_id: current_user.id).empty? %>

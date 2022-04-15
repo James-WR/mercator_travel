@@ -1,3 +1,6 @@
+// This code runs in the show page, allowing the user to see full-sized photos
+// on click and to delete photos as long as there is always one cover photo left.
+
 const coverPhoto = document.querySelector("#cover-photo");
 const photos = document.querySelectorAll(".photo");
 const delButtons = document.querySelectorAll(".delete-v1");
