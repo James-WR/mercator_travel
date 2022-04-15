@@ -1,6 +1,6 @@
 const coverPhoto = document.querySelector("#cover-photo");
 const photos = document.querySelectorAll(".photo");
-const delButtons = document.querySelectorAll("#delete-v1")
+const delButtons = document.querySelectorAll(".delete-v1")
 
 if ($('body').is('.show-page')) {
   photos.forEach((photo) => {

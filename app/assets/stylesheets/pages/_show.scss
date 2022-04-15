@@ -88,6 +88,7 @@
   background-image: url("colourful_map.jpeg");
   background-size: cover;
   background-position: center;
+  position: relative
 }
 
 .photo:hover {
@@ -149,14 +150,14 @@
   font-size: 12px !important;
 }
 
-#delete-photo-button {
+#delete-cross {
   height: 30px;
   opacity: 0.4;
   position: absolute;
-  right: 1%;
+  right: 0;
 }
 
-#delete-photo-button:hover {
+#delete-cross:hover {
   opacity: 1;
   cursor: pointer;
 }

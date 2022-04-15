@@ -5,7 +5,7 @@
   <div id="show-main">
     <div id="photo-and-description">
       <div id="cover-photo" style="background-image: url('<%= cl_image_path @cover_photo %>')">
-        <img src="/assets/cross.png" alt="" id="delete-photo-button">
+        <%# <img src="/assets/cross.png" alt="" id="delete-photo-button"> %>
       </div>
       <div id="trip-description">
         <h1><%= @trip.name%> - <%= @trip.destination_exact%></h1>
@@ -48,8 +48,9 @@
     <div id="photos-and-quote">
       <div id="photos-container">
         <% @trip.photos.each do |photo| %>
-          <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')"></div>
-          <p id="delete-v1"><%= link_to 'Remove', delete_image_attachment_trip_path(photo.id), method: :delete %></p>
+          <div class="photo" style="background-image: url('<%= cl_image_path photo.key %>')">
+            <div class="delete-v1"><%= link_to (image_tag("/assets/cross.png", id: "delete-cross")), delete_image_attachment_trip_path(photo.id), method: :delete %></div>
+          </div>
         <% end %>
       </div>
       <div id="quotes" style="right: 10%; width:25%; top:66%;">
