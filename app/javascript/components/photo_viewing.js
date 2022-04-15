@@ -1,6 +1,16 @@
 const coverPhoto = document.querySelector("#cover-photo");
 const photos = document.querySelectorAll(".photo");
-const delButtons = document.querySelectorAll(".delete-v1")
+const delButtons = document.querySelectorAll(".delete-v1");
+const delLink = document.querySelectorAll("#delete-link")
+
+// delLink.forEach(link => {
+//   link.addEventListener("click", (e) => {
+//     console.log(e)
+//   })
+// })
+
+
+
 
 if ($('body').is('.show-page')) {
   photos.forEach((photo) => {
@@ -11,6 +21,8 @@ if ($('body').is('.show-page')) {
   };
 }
 
-function makeCover() {
-  coverPhoto.style.backgroundImage = this.style.backgroundImage
+function makeCover(e) {
+  if (e.target.className == "photo") {
+    coverPhoto.style.backgroundImage = this.style.backgroundImage
+  }
 }
