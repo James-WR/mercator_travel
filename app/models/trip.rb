@@ -1,4 +1,7 @@
 class Trip < ApplicationRecord
+  validates :name, :destination_exact, presence: true
+  validates :name, length: { in: 5..25 }
+  validates :description, length: { maximum: 270 }
   has_many_attached :photos
   belongs_to :user
   geocoded_by :destination_exact
